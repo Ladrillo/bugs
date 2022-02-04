@@ -1,5 +1,5 @@
 import React from 'react'
-import Fly from './Fly'
+import Fly from '../lib/Fly'
 
 export default function App(props) {
   const { className } = props

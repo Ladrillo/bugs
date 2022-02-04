@@ -1,5 +1,5 @@
 {
-  "name": "@ladrillo/fly",
+  "name": "@ladrillo/bugs",
   "version": "0.0.1",
   "scripts": {
     "dev": "fkill :9000 :3000 -s && concurrently \"npm:backend\" \"npm:frontend\"",
@@ -9,7 +9,7 @@
     "frontend": "webpack serve --open",
     "backend": "node index.js",
     "start": "npm run backend",
-    "compile": "babel frontend/components/Fly.js -d ./dist",
+    "compile": "NODE_ENV=production babel frontend/lib -d ./dist",
     "prepublishOnly": "npm i && npm run compile || exit 1"
   },
   "devDependencies": {
@@ -55,8 +55,16 @@
     "node": "16.x",
     "npm": "8.x"
   },
-  "bin": "./dist/Fly.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ladrillo/bugs.git"
+  },
+  "author": "Gabriel Cabrejas",
+  "license": "ISC",
+  "homepage": "https://github.com/Ladrillo/bugs#readme"
 }
